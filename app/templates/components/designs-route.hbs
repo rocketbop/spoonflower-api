@@ -1,1 +1,37 @@
-{{yield}}
+<h2 id="title">Spoonflower API</h2>
+
+<div class="container-fluid">
+  <div class="row">
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-sm-2">
+            <h1>Query</h1>
+            <p>
+              Availability:
+            </p>
+            <ul class='availability'>
+              <li> {{link-to 'All' 'index'       (query-params state='all')       activeClass='selected'}} </li>
+              <li> {{link-to 'For Sale' 'index'    (query-params state='forSale')    activeClass='selected'}} </li>
+              <li> {{link-to 'Not For Sale' 'index' (query-params state='notForSale') activeClass='selected'}} </li>
+            </ul>
+
+        </div>
+        <div class="col-sm-10">
+          {{#each filtered as |design|}}
+            <p>
+              Design Name: <strong>{{design.name}}</strong> by <strong>{{design.user.firstName}}</strong>
+            </p>
+            <p>For Sale?
+              {{#if design.forSale}}
+                Yes
+              {{else}}
+                No
+              {{/if}}
+            </p>
+            <img src="{{design.thumbnailUrl}}" alt="" />
+          {{/each}}
+        </div>
+    </div>
+</div>
+</div>
+</div>

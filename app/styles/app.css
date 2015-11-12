@@ -1,0 +1,17 @@
+html,body,.col-md-12,.row {
+  height:100%;
+}
+.row > div {
+  height:100%;
+}
+
+.row .col-md-2 {
+  background-color:#eee;
+}
+.row .col-md-10 {
+  background-color:#ddd;
+}
+
+strong {
+  font-weight: 700;
+}
